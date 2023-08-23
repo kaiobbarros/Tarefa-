@@ -17,7 +17,7 @@ public class PointwiseTransform extends Object {
 		}
 		return output;	
 	} 
-	// jorge vercillo teste
+	// jorge vercillo teste dssd
 
 	/**
 	* Question 2.2 Stretch normalized constrast

@@ -2,7 +2,7 @@
 public class PointwiseTransform extends Object {
 
 	/**
-	* Question 2.1 Contrast reversal
+	* Question 1.1 Contrast reversal
 	*/
 	static public ImageAccess inverse(ImageAccess input) {
 		int nx = input.getWidth();
@@ -20,7 +20,7 @@ public class PointwiseTransform extends Object {
 	// jorge vercillo teste dssd
 
 	/**
-	* Question 2.2 Stretch normalized constrast
+	* Question 1.2 Stretch normalized constrast
 	*/
 	static public ImageAccess rescale(ImageAccess input) {
 		int nx = input.getWidth();
@@ -33,7 +33,7 @@ public class PointwiseTransform extends Object {
 	}
 
 	/**
-	* Question 2.3 Saturate an image
+	* Question 1.3 Saturate an image
 	*/
 	static public ImageAccess saturate(ImageAccess input) {
 		int nx = input.getWidth();
@@ -44,7 +44,7 @@ public class PointwiseTransform extends Object {
 	}
 	
 	/**
-	* Question 4.1 Maximum Intensity Projection
+	* Question 3.1 Maximum Intensity Projection
 	*/
 	static public ImageAccess zprojectMaximum(ImageAccess[] zstack) {
 		int nx = zstack[0].getWidth();
@@ -56,7 +56,7 @@ public class PointwiseTransform extends Object {
 	}
 
 	/**
-	* Question 4.2 Z-stack mean
+	* Question 3.2 Z-stack mean
 	*/
 	static public ImageAccess zprojectMean(ImageAccess[] zstack) {
 		int nx = zstack[0].getWidth();

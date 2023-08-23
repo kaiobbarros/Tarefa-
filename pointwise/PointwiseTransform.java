@@ -16,7 +16,8 @@ public class PointwiseTransform extends Object {
 			output.putPixel(x, y, value);
 		}
 		return output;	
-	}
+	} 
+	// jorge vercillo teste
 
 	/**
 	* Question 2.2 Stretch normalized constrast

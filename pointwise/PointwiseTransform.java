@@ -31,7 +31,7 @@ public class PointwiseTransform extends Object {
 		double minimum = input.getMinimum();
 			double alpha = 255/(maximum - minimum);
 		
-		double beta = minimum;
+			double beta = minimum;
 		
 		// gerando função g
 		double g = 0.0;

@@ -17,7 +17,6 @@ public class PointwiseTransform extends Object {
 		}
 		return output;	
 	} 
-	// jorge vercillo teste dssd
 
 	/**
 	* Question 1.2 Stretch normalized constrast
@@ -27,8 +26,22 @@ public class PointwiseTransform extends Object {
 		int ny = input.getHeight();
 		double max = input.getMaximum();
 		double min = input.getMinimum();
+		// gerando alpha e beta baseado nas funções do script
+		double maximum = input.getMaximum();
+		double minimum = input.getMinimum();
+			double alpha = 255/(maximum - minimum);
+		
+		double beta = minimum;
+		
+		// gerando função g
+		double g = 0.0;
 		ImageAccess output = new ImageAccess(nx, ny);
-		// Add your code here
+	    
+	    for (int x=0; x<nx; x++)
+			for (int y=0; y<ny; y++) {
+				g = alpha * (input.getPixel(x, y) - beta);
+				output.putPixel(x, y, g);
+			}
 		return output;	
 	}
 
@@ -39,7 +52,16 @@ public class PointwiseTransform extends Object {
 		int nx = input.getWidth();
 		int ny = input.getHeight();
 		ImageAccess output = new ImageAccess(nx, ny);
-		// Add your code here
+		//trunca o valor do pixel para 1000 no maximo 
+		//(if valor <1000, valor = valor; if valor >= 1000, valor = 1000)
+		for (int x=0; x<nx; x++)
+		for (int y=0; y<ny; y++) {
+			if (input.getPixel(x, y) > 10000) {
+				output.putPixel(x, y, 10000);
+			} else {
+				output.putPixel(x, y, input.getPixel(x, y));
+			}
+		}
 		return output;
 	}
 	

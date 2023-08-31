@@ -73,7 +73,20 @@ public class PointwiseTransform extends Object {
 		int ny = zstack[0].getHeight();
 		int nz = zstack.length;
 		ImageAccess output = new ImageAccess(nx, ny);
-		// Add your code here
+		//declarar valor de máxima intensidade
+		double valormax = 0.0;
+    	for (int x=0; x<nx; x++)
+		for (int y=0; y<ny; y++) {
+    	  	valormax = zstack[0].getPixel(x, y);
+    	  	//iteração em Z
+    	  	for (int z=0; z<nz; z++){
+				if (value_max < zstack[z].getPixel(x, y)) {
+    	      	valormax = zstack[z].getPixel(x, y);
+				}
+    	  	}
+
+			output.putPixel(x, y, valormax);
+    	}
 		return output;	
 	}
 
@@ -85,7 +98,18 @@ public class PointwiseTransform extends Object {
 		int ny = zstack[0].getHeight();
 		int nz = zstack.length;
 		ImageAccess output = new ImageAccess(nx, ny);
-		// Add your code here
+		
+		double zstack = 0.0;
+		//iteração para stackar em Z
+    	for (int x=0; x<nx; x++)
+			for (int y=0; y<ny; y++) {
+				zstack = 0.0;
+    		for (int z=0; z<nz; z++){
+    	    	zstack += zstack[z].getPixel(x, y); 
+		  	}
+			//Gera output com z stackado
+			output.putPixel(x, y, zstack/nz);
+    	}
 		return output;	
 	}
 

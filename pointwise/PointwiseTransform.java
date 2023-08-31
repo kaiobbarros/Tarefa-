@@ -99,16 +99,16 @@ public class PointwiseTransform extends Object {
 		int nz = zstack.length;
 		ImageAccess output = new ImageAccess(nx, ny);
 		
-		double zstack = 0.0;
+		double zstackado = 0.0;
 		//iteração para stackar em Z
     	for (int x=0; x<nx; x++)
 			for (int y=0; y<ny; y++) {
-				zstack = 0.0;
+				zstackado = 0.0;
     		for (int z=0; z<nz; z++){
-    	    	zstack += zstack[z].getPixel(x, y); 
+    	    	zstackado += zstack[z].getPixel(x, y); 
 		  	}
 			//Gera output com z stackado
-			output.putPixel(x, y, zstack/nz);
+			output.putPixel(x, y, zstackado/nz);
     	}
 		return output;	
 	}

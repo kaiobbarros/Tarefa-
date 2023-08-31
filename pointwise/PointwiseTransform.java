@@ -80,7 +80,7 @@ public class PointwiseTransform extends Object {
     	  	valormax = zstack[0].getPixel(x, y);
     	  	//iteração em Z
     	  	for (int z=0; z<nz; z++){
-				if (value_max < zstack[z].getPixel(x, y)) {
+				if (valormax < zstack[z].getPixel(x, y)) {
     	      	valormax = zstack[z].getPixel(x, y);
 				}
     	  	}
